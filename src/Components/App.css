@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+
+:root {
+  --primary: #032541;
+  --secondary: #21d07a;
+  --white: #fff;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+    color: black;
+}
+.btn {
+  padding: 10px 15px;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  line-height: 1.1;
+}
+
+.btn:hover {
+  background-color: #1aa762;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary);
+}
+
+header .inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+header a {
+  color: var(--white);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  opacity: 0.7;
+}
+
+header .brand a {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+header .nav-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+header .nav-links li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+header .nav-links li:last-child {
+  margin-right: 0;
+}
+
+img {
+  width: 100%;
+}
+form {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+form input[type="submit"] {
+  border: none;
+  background: orangered;
+  color: white;
+  margin-left: 15px;
+  border-radius: 3px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+#rating-filter {
+  color: white;
+  padding: 5px;
+  background: orangered;
+  border: none;
+  cursor: pointer;
+}
+section {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 760px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+figure {
+  background-color: white;
+  width: 14em;
+  margin: 0.5em;
+  -webkit-box-shadow: 0 5px 18px 0 gray;
+  box-shadow: 0 5px 18px 0 gray;
+  overflow: hidden;
+  position: relative;
+}
+figure img {
+  height: 21em;
+}
+figure figcaption {
+  line-height: 2;
+  padding: 0 0.8em;
+}
+figure figcaption p {
+  text-transform: capitalize;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: orangered;
+}
+figure figcaption .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+figure figcaption .rating .fa-heart {
+  color: #fa5050;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+figure figcaption .rating h4 {
+  margin: 0;
+}
+@media (max-width: 737px) {
+  section {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+ }
+}
