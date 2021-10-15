@@ -1,23 +1,107 @@
 import React, { useState } from 'react';
+import MovieCard from './MovieCard';
+import mov from './MovieList';
+import {
+  Button,
+  InputGroup,
+  Label,
+  Input,
+} from 'reactstrap';
+//import {movies} from './MovieList.js'
+const AddMovie = ({ addAdd }) => {
 
-const AddMovie = ({ addMovie }) => {
+    const [ moviesN, setMoviesN ] = useState(mov,
+    {title: '',
+    description: '',
+    urlPoster: '',
+    rate: 0,}
+    );
 
-    const [ userInput, setUserInput ] = useState('');
+ const handleChange = (e) =>
+    setMoviesN({ ...moviesN, [e.target.name]: e.target.value });
 
-    const handleChange = (e) => {
-        setUserInput(e.currentTarget.value)
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addAdd(moviesN);
+    setMoviesN({ movies: mov });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        addMovie(userInput);
-        setUserInput("");
-    }
+
+
     return (
-        <form onSubmit={handleSubmit}>
-            <input value={userInput} type="text" onChange={handleChange} placeholder="Enter Movie Title Here..."/>
-            <button>Submit</button>
-        </form>
+        
+        <div>
+            <header>
+                <div className="container">
+                    <div className="inner-content">
+                        <div className="nav-links">
+                            <form onSubmit={handleSubmit}>
+                             <InputGroup row>
+                                    <Label for='Title' sm={2}>
+                                    Title:
+                                    </Label>
+                                    <Input
+                                    type='text'
+                                    name='title'
+                                    placeholder='Title'
+                                    onChange={handleChange}
+                                    />
+                                </InputGroup>
+                                <InputGroup row>
+                                    <Label for='Poster' sm={2}>
+                                    Poster:
+                                    </Label>
+                                    <Input
+                                    type='url'
+                                    name='posterUrl'
+                                    placeholder='Poster URL '
+                                    onChange={handleChange}
+                                    />
+                                </InputGroup>
+                                <InputGroup row>
+                                    <Label for='Description' sm={2}>
+                                    Description:
+                                    </Label>
+                                    <Input
+                                    type='textarea'
+                                    name='description'
+                                    placeholder='Description '
+                                    onChange={handleChange}
+                                    />
+                                </InputGroup>
+                                <InputGroup row>
+                                    <Label for='rate' sm={2}>
+                                    Rate:
+                                    </Label>
+                                    <Input
+                                    type='text'
+                                    name='rate'
+                                    placeholder='Rate '
+                                    onChange={handleChange}
+                                    />
+                                </InputGroup>
+                                <Button
+                                    color='primary'
+                                    onClick={(e) => {
+                                    handleSubmit(e);
+                                    }}
+                                >
+                                    Add
+                                </Button>{' '}
+         
+          
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </header>
+                       
+        </div>
+       
+    
+      
+                            
     );
 };
 

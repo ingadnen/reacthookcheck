@@ -1,5 +1,5 @@
 
-    const movies = [
+    export const movies = [
         {
           id:1,
           title: "Mad Max: Fury Road",
