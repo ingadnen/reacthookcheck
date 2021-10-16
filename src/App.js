@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Filter from './Components/Filter';
 import AddMovie from './Components/AddMovie';
 import {movies} from './Components/MovieList';
+import MoviesList from './Components/MoviesList';
 import './Components/App.css';
 
 function App () {
   const [ moviesL, setMoviesL ] = useState(movies);
+  
   const addMovie = (moviesN) => setMoviesL([...moviesL, moviesN]);
   /*const addMovie = (moviesN ) => {
       let copy = [...moviesL];
@@ -17,7 +19,11 @@ function App () {
     return (
       <div>
         <Filter/> 
-        
+        <MoviesList
+        moviesArray={
+         moviesL
+        }
+      />
         <AddMovie addAdd={addMovie}/>
       </div>
     );

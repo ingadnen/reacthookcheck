@@ -9,7 +9,7 @@ class MovieCard extends React.Component {
           <img src={posterURL} alt="im"/>
           <figcaption>
             <h4 className="title">{title}</h4>
-            <p className="alignleft">{description.join(' ')}</p>
+            <p className="alignleft">{description}</p>
             <p className="alignright">{rate}</p>
             
           </figcaption>

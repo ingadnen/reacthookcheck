@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MovieCard from './MovieCard';
+//import MovieCard from './MovieCard';
 import mov from './MovieList';
 import {
   Button,
