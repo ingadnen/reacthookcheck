@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import MovieCard from './MovieCard';
+
+import PropTypes from 'prop-types';
 import mov from './MovieList';
+import MovieCard from './MovieCard';
+import React, { useState } from 'react';
 import './App.css';
 
 function strip(title) {
   return title.replace(/^(a|an|the)\s/i, "");
 }
-
-function Filter () {
-  const [value, setValue] = useState("Sort")
+const Filter = ({moviesArray}) => {
+     const [value, setValue] = useState("Sort")
     const [movies, setMovies] = useState(mov,[])
     const handleSubmit= (e) => {
       
@@ -53,9 +54,8 @@ function Filter () {
       
      //const handleSubmit = useContext(HandleContext)
 
-       
-    return (
-      <div>
+  return (
+    <div>
             <header>
                 <div className="container">
                     <div className="inner-content">
@@ -74,11 +74,18 @@ function Filter () {
                     </div>
                 </div>
              </header>
-        <section>
-          {mov.map(m => <MovieCard movie={m} />)}
-        </section>
-      </div>
-    );
-    }
-  
-  export default Filter;
+
+    <section>
+      {moviesArray.map((movie, key) => (
+        <MovieCard movie={movie} key={key} />
+      ))}
+      </section>
+   </div>
+  );
+};
+Filter.propTypes = {
+  moviesArray: PropTypes.array.isRequired,
+};
+
+
+export default Filter;
